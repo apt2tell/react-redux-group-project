@@ -18,7 +18,23 @@ export function Counter() {
   const [incrementAmount, setIncrementAmount] = useState('2');
 
   const incrementValue = Number(incrementAmount) || 0;
-
+  const links = [
+    {
+      id: 1,
+      path: '/',
+      text: 'Rockets',
+    },
+    {
+      id: 2,
+      path: '/missions',
+      text: 'Missions',
+    },
+    {
+      id: 3,
+      path: '/my-profile',
+      text: 'My Profile',
+    },
+  ];
   return (
     <div>
       <div className={styles.row}>
