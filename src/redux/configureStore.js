@@ -1,7 +1,8 @@
+/* eslint-disable */
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import rocketsReducer from './Rocket/RocketSlice';
-import missionsReducer from './Missions/Missions';
+import missionsReducer from './Missions/missionSlice';
 
 const store = configureStore({
   reducer: {
