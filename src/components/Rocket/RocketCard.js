@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { cancelRocket, reserveRocket } from '../../redux/rocket/rocketSlice';
 
 const RocketCard = ({ rocket }) => {
@@ -23,7 +24,7 @@ const RocketCard = ({ rocket }) => {
 
   return (
     <div className="rocket-card">
-      <img className="image" src={rocketImage} alt="rocket image" />
+      <img className="image" src={rocketImage} alt="rocket" />
       <div className="rocket-desc">
         <h1 className="title-desc">{rocketName}</h1>
         <p className="info">
