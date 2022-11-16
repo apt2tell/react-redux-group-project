@@ -10,12 +10,12 @@ const Rockets = () => {
   // Dispatch the List of rockets
   useEffect(() => {
     if (!rockets.length) dispatch(getRocketAPI());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   return (
     <>
-      {rockets.map((rocket) => <RocketCard key={rocket.rocketId} rocket={rocket} />)}
+      {rockets.map((rocket) => (<RocketCard key={rocket.rocketId} rocket={rocket} />))}
     </>
   );
 };
