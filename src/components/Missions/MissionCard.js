@@ -19,18 +19,18 @@ const MissionCard = ({
 
   return (
     <>
-      <tbody>
-        <tr>
-          {missionName}
-        </tr>
-        <tr>
-          {description}
-        </tr>
-        <tr>
-          {missionActive === false ? (<span className="badge">Not A Member</span>) : (<span className="badge"> A Member</span>) }
-          {missionActive === false ? (<button type="submit" id={id} onClick={joinMissionHandler}>Join Mission</button>) : (<button type="submit" id={id} onClick={leaveMissionHandler}>Leave Mission</button>)}
-        </tr>
-      </tbody>
+      <td>
+        {missionName}
+      </td>
+      <td>
+        {description}
+      </td>
+      <td className="align-badge">
+        {missionActive === false ? (<span className="badge">Not A Member</span>) : (<span className="badge"> A Member</span>) }
+      </td>
+      <td className="align-btn">
+        {missionActive === false ? (<button className="join-mission-btn mission-btn" type="submit" id={id} onClick={joinMissionHandler}>Join Mission</button>) : (<button className="leave-mission-btn mission-btn" type="submit" id={id} onClick={leaveMissionHandler}>Leave Mission</button>)}
+      </td>
     </>
   );
 };

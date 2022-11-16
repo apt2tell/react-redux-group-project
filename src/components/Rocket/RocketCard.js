@@ -33,9 +33,13 @@ const RocketCard = ({ rocket }) => {
         </p>
         { active === true
           ? (
-            <button className="cancel-btn" type="button" id={id} onClick={handleCancelReserve}>Cancel Reservation </button>
+            <span><button className="cancel-btn btn" type="button" id={id} onClick={handleCancelReserve}>Cancel Reservation </button></span>
           )
-          : (<button className="reserve-btn" type="button" id={id} onClick={handleReserve}>Reserve Rocket</button>)}
+          : (
+            <span>
+              <button className="reserve-btn btn" type="button" id={id} onClick={handleReserve}>Reserve Rocket</button>
+            </span>
+          )}
       </div>
     </div>
   );
