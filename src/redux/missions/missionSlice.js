@@ -8,7 +8,7 @@ const initialState = [];
 const APIurl = 'https://api.spacexdata.com/v3/missions';
 
 // Create Thunk action Creator
-const getMissionsAPI = createAsyncThunk(
+export const getMissionsAPI = createAsyncThunk(
   'missions/getMissions', async () => {
     const resp = await axios.get(APIurl);
     return resp.data;
