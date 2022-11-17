@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { render, screen, fireEvent } from '@testing-library/react';
-import MissionCard from '../missions/missionCard';
+import MissionCard from '../Missions/MissionCard';
 import store from '../../redux/configureStore';
 
 it('MissionCard renders correctly', () => {
