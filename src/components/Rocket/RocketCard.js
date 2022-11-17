@@ -45,7 +45,7 @@ const RocketCard = ({ rocket }) => {
 
 RocketCard.propTypes = {
   rocket: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     active: PropTypes.bool,
     flickr_images: PropTypes.string,
     description: PropTypes.string,

@@ -26,20 +26,27 @@ const MissionCard = ({
         {description}
       </td>
       <td className="align-badge">
-        {missionActive === false ? (<span className="badge">Not A Member</span>) : (<span className="badge"> A Member</span>) }
+        {missionActive === false ? (<span data-testid="badgeInfo" className="badge">Not A Member</span>) : (<span className="badge"> A Member</span>) }
       </td>
       <td className="align-btn">
-        {missionActive === false ? (<button className="join-mission-btn mission-btn" type="submit" id={id} onClick={joinMissionHandler}>Join Mission</button>) : (<button className="leave-mission-btn mission-btn" type="submit" id={id} onClick={leaveMissionHandler}>Leave Mission</button>)}
+        {missionActive === false ? (<button name="joinBtn" className="join-mission-btn mission-btn" type="button" id={id} onClick={joinMissionHandler}>Join Mission</button>) : (<button className="leave-mission-btn mission-btn" type="submit" id={id} onClick={leaveMissionHandler}>Leave Mission</button>)}
       </td>
     </>
   );
 };
 
 MissionCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  missionName: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  missionActive: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  missionName: PropTypes.string,
+  description: PropTypes.string,
+  missionActive: PropTypes.bool,
+};
+
+MissionCard.defaultProps = {
+  id: '',
+  missionName: '',
+  description: '',
+  missionActive: false,
 };
 
 export default MissionCard;

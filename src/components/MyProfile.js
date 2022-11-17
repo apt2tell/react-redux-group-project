@@ -8,7 +8,6 @@ const MyProfile = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.filter((item) => (
     item.active === true)));
-
   const reservation = useSelector(selectAllMissions);
   const missionJoined = reservation.filter((item) => item.missionActive === true);
 
