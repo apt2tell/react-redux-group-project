@@ -137,3 +137,14 @@ ul li:last-child {
   border-left: 2px solid black;
   padding-left: 2rem;
 }
+
+.cancel-mission {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #6e767e;
+  border-radius: 4px;
+  background: #f3fef3;
+  padding: 0.5rem;
+  color: red;
+  font-size: 1rem;
+}
