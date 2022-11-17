@@ -1,5 +1,6 @@
 /* eslint-disable */
 import { useEffect } from 'react';
+import Table from 'react-bootstrap/Table';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMissionsAPI } from '../../redux/missions/missionSlice';
 import MissionCard from './MissionCard';
@@ -16,8 +17,9 @@ const Missions = () => {
 
   return (
     <>
-      <table>
-        <tbody>
+      <Table striped bordered hover responsive>
+        <thead>
+          <tr>
           <th>
             <h1>Mission</h1>
           </th>
@@ -27,20 +29,24 @@ const Missions = () => {
           <th>
             <h1>Status</h1>
           </th>
+          <th>
+            &nbsp;
+          </th>
+          </tr>
+        </thead>
+        <tbody>
           {mission.map((item) => (
-            <tr className="row" key={item.missionId}>
-              <td>
-                <MissionCard
+            <tr key={item.missionId}>
+              <MissionCard
                   missionName={item.missionName}
                   description={item.missionDesc}
                   id={item.missionId}
                   missionActive={item.missionActive}
                 />
-              </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </>
   );
 };

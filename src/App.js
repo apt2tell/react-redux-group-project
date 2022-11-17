@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import './App.css';
-import Navbar from './components/navigation/Navbar';
 import Missions from './components/Missions/Missions';
 import Rockets from './components/Rocket/Rockets';
 import MyProfile from './components/MyProfile';
+import Navbar from './components/navigation/Navbar';
 
 function App() {
   return (
