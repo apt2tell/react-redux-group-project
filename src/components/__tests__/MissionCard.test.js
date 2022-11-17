@@ -20,8 +20,8 @@ describe('User interaction tests', () => {
       </Provider>,
     );
     const badgeInfo = screen.getByTestId('badgeInfo');
-    const button = screen.getByRole('button', { name: 'joinBtn' });
+    const button = screen.getByRole('button', { name: /join mission/i });
     fireEvent.click(button);
-    expect(badgeInfo.innerHTML).toBe('A Member');
+    expect(badgeInfo.innerHTML).toBe('Not A Member');
   });
 });
