@@ -7,19 +7,19 @@ import { cancelRocket } from '../redux/rocket/rocketSlice';
 const MyProfile = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets.filter((item) => (
-    item.rocketReserved === true)));
+    item.active === true)));
   const reservation = useSelector(selectAllMissions);
   const missionJoined = reservation.filter((item) => item.missionActive === true);
 
   // Cancel Rocket handler
   const cancelRocketHandler = (e) => {
-    const data = e.target.id;
+    const data = Number(e.target.id);
     dispatch(cancelRocket(data));
   };
 
   // cancel Mission handler
   const cancelMissionHandler = (e) => {
-    const data = e.target.id;
+    const data = Number(e.target.id);
     dispatch(leaveMission(data));
   };
 
@@ -38,9 +38,6 @@ const MyProfile = () => {
                       <h2>
                         {item.missionName}
                       </h2>
-                      <button type="button">
-                        <a href={item.missionLink}>Read More</a>
-                      </button>
                       <button
                         type="button"
                         className="cancel-mission"
@@ -64,18 +61,15 @@ const MyProfile = () => {
               <th>
                 {!rockets.length ? (<li>No missions joined.</li>) : null }
                 {rockets && rockets.map((item) => (
-                  <tr className="row" key={item.rocketId}>
+                  <tr className="row" key={item.id}>
                     <td>
                       <h2>
-                        {item.rocketName}
+                        {item.rocket_name}
                       </h2>
-                      <button type="button">
-                        <a href={item.rocketWiki}>Read More</a>
-                      </button>
                       <button
                         type="button"
                         className="cancel-mission"
-                        id={item.rocketId}
+                        id={item.id}
                         onClick={cancelRocketHandler}
                       >
                         Cancel

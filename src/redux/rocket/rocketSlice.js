@@ -22,11 +22,12 @@ const RocketSlice = createSlice({
   initialState,
   reducers: {
     reserveRocket: (state, action) => state.map((item) => (
-      item.rocketId === action.payload ? { ...item, rocketReserved: true } : item)),
+      item.id === action.payload ? { ...item, active: true } : item)),
+
+    cancelRocket: (state, action) => state.map((item) => (
+      item.id === action.payload ? { ...item, active: false } : item
+    )),
   },
-  cancelRocket: (state, action) => state.map((item) => (
-    item.rocketId === action.payload ? { ...item, reserveRocket: false } : item
-  )),
 
   extraReducers: (builder) => {
     builder

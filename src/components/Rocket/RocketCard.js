@@ -12,13 +12,13 @@ const RocketCard = ({ rocket }) => {
 
   // Reserve rocket handler
   const handleReserve = (e) => {
-    const data = e.target.id;
+    const data = Number(e.target.id);
     dispatch(reserveRocket(data));
   };
 
   // Cancel rocket reserve
   const handleCancelReserve = (e) => {
-    const data = e.target.id;
+    const data = Number(e.target.id);
     dispatch(cancelRocket(data));
   };
 
@@ -33,12 +33,10 @@ const RocketCard = ({ rocket }) => {
         </p>
         { active === true
           ? (
-            <span><button className="cancel-btn btn" type="button" id={id} onClick={handleCancelReserve}>Cancel Reservation </button></span>
+            <button className="cancel-btn btn" type="button" id={id} onClick={handleCancelReserve}>Cancel Reservation </button>
           )
           : (
-            <span>
-              <button className="reserve-btn btn" type="button" id={id} onClick={handleReserve}>Reserve Rocket</button>
-            </span>
+            <button className="reserve-btn btn" type="button" id={id} onClick={handleReserve}>Reserve Rocket</button>
           )}
       </div>
     </div>
@@ -47,7 +45,7 @@ const RocketCard = ({ rocket }) => {
 
 RocketCard.propTypes = {
   rocket: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     active: PropTypes.bool,
     flickr_images: PropTypes.string,
     description: PropTypes.string,

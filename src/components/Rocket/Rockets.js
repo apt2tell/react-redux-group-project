@@ -15,7 +15,7 @@ const Rockets = () => {
 
   return (
     <>
-      {rockets.map((rocket) => (<RocketCard key={rocket.rocketId} rocket={rocket} />))}
+      {rockets.map((rocket) => (<RocketCard key={rocket.id} rocket={rocket} />))}
     </>
   );
 };
