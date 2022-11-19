@@ -29,6 +29,8 @@ In this task, we worked with the real live data from the SpaceX API. We built a 
 - duck pattern
 - API
 
+## Live Demo
+> Check the [Live Demo](https://okechukwu-muokwugwo.github.io/react-redux-group-project/)
 
 # Getting Started
 
